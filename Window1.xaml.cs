@@ -67,6 +67,9 @@ namespace ListViewDragDropManagerDemo
 			this.chkSwapDroppedItem.Checked += delegate { this.dragMgr.ProcessDrop += dragMgr_ProcessDrop; };
 			this.chkSwapDroppedItem.Unchecked += delegate { this.dragMgr.ProcessDrop -= dragMgr_ProcessDrop; };
 
+            this.chkShowPopup.Checked += delegate { this.dragMgr.ProcessDrop += dragMgr_PokazOkno; };
+            this.chkShowPopup.Checked -= delegate { this.dragMgr.ProcessDrop -= dragMgr_PokazOkno; };
+
 			// Show or hide the lower ListView.
 			this.chkShowOtherListView.Checked += delegate { this.listView2.Visibility = Visibility.Visible; };
 			this.chkShowOtherListView.Unchecked += delegate { this.listView2.Visibility = Visibility.Collapsed; };
@@ -80,6 +83,13 @@ namespace ListViewDragDropManagerDemo
 		}
 
 		#endregion // Window1_Loaded
+
+        #region Testowe Okno
+        private  void dragMgr_PokazOkno(object sender,ProcessDropEventArgs<Task> e )
+        {
+            MessageBox.Show("coœ modyfikujesz?");
+        }
+        #endregion
 
 		#region dragMgr_ProcessDrop
 
@@ -115,7 +125,10 @@ namespace ListViewDragDropManagerDemo
 
 			// Set this to 'Move' so that the OnListViewDrop knows to 
 			// remove the item from the other ListView.
-			e.Effects = DragDropEffects.Move;
+			
+            e.Effects = DragDropEffects.Move;
+            //kz
+            //e.Effects = DragDropEffects.Copy;
 		}
 
 		#endregion // dragMgr_ProcessDrop
@@ -126,6 +139,9 @@ namespace ListViewDragDropManagerDemo
 		void OnListViewDragEnter( object sender, DragEventArgs e )
 		{
 			e.Effects = DragDropEffects.Move;
+            
+            //kz
+            //e.Effects = DragDropEffects.Copy;
 		}
 
 		#endregion // OnListViewDragEnter

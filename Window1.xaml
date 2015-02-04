@@ -94,7 +94,15 @@
           >
           Show Other ListView
         </CheckBox>
-      </StackPanel>
+                <CheckBox 
+          Name="chkShowPopup" 
+          IsChecked="False"
+          Margin="4" 
+          ToolTip="If checked, another ListView is visible.  The items from one ListView can be dropped into the other ListView."
+          >
+          Pokaż okno ;) [test]
+                </CheckBox>
+            </StackPanel>
     </GroupBox>
 
     <ListView Name="listView"       
