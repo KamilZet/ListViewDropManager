@@ -67,7 +67,7 @@ namespace ListViewDragDropManagerDemo
 			// Use or do not use custom drop logic.
 			this.chkSwapDroppedItem.Checked += delegate { this.dragMgr.ProcessDrop += dragMgr_ProcessDrop; };
 			this.chkSwapDroppedItem.Unchecked += delegate { this.dragMgr.ProcessDrop -= dragMgr_ProcessDrop; };
-
+            //
             this.chkShowPopup.Checked += delegate { this.dragMgr.ProcessDrop += dragMgr_PokazOkno; };
             this.chkShowPopup.Checked -= delegate { this.dragMgr.ProcessDrop -= dragMgr_PokazOkno; };
 
