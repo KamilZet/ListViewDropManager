@@ -15,6 +15,7 @@ using WPF.JoshSmith.ServiceProviders.UI;
 
 namespace ListViewDragDropManagerDemo
 {
+    //
 	/// <summary>
 	/// Demonstrates how to use the ListViewDragManager class.
 	/// </summary>
